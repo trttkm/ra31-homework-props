@@ -3,16 +3,11 @@ import { StarItem } from './StarItem/StarItem';
 import './Stars.css';
 
 export function Stars({ count }) {
-  const arrayOfStars = [];
-  for (let i = 0; i < count; i++) {
-    arrayOfStars.push(<StarItem />);
-  }
+  const stars = Array.from({ length: count }, () => <StarItem />);
   
   return count > 0 && count < 6 ? (
     <ul className="card-body-stars">
-      {arrayOfStars.map(star => (
-        star
-      ))}
+      {stars}
     </ul>
   ) : null;
 }

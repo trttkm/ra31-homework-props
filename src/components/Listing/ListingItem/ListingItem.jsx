@@ -1,6 +1,5 @@
 import './ListingItem.css';
 import PropTypes from 'prop-types';
-import { Stars } from '../../Rating/Stars/Stars';
 
 export function ListingItem({ item }) {
   
@@ -41,5 +40,14 @@ export function ListingItem({ item }) {
 }
 
 ListingItem.propTypes = {
-  item: PropTypes.object,
+  item: PropTypes.shape({
+    title: PropTypes.string,
+    url: PropTypes.string,
+    MainImage: PropTypes.shape({
+      url_570xN: PropTypes.string,
+    }),
+    price: PropTypes.number,
+    currency_code: PropTypes.string,
+    quantity: PropTypes.number,
+  }),
 };
